@@ -1,5 +1,5 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import by
+from selenium.webdriver.common.by import By
 import time
 import math
 
@@ -11,9 +11,9 @@ try:
     browser = webdriver.Chrome()
     browser.get(link)
     value = browser.find_element(By.CSS_SELECTOR, "#input_value").text
-    y = calc(x)
+    y = calc(value)
     input1 = browser.find_element(By.ID, "answer")
-    imput1.set_keys(y)
+    input1.send_keys(y)
     checkbox = browser.find_element(By.ID, "robotCheckbox")
     checkbox.click()
     radio = browser.find_element(By.ID, "robotsRule")
